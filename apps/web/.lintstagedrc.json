@@ -1,0 +1,3 @@
+{
+  "*.ts": ["pnpm --filter @nce-talk/web exec eslint --fix", "prettier --write"]
+}
