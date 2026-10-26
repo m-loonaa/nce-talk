@@ -18,4 +18,10 @@
   [Suggested Usage - Prettier](https://typescript-eslint.io/users/what-about-formatting/#suggested-usage---prettier)
   [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 
-- [dotenv](https://www.npmjs.com/package/dotenv)
+- [Clerk](https://clerk.com/docs/expressjs/getting-started/quickstart)
+
+# apps/web
+
+- [Next.js](https://nextjs.org/docs/app/getting-started/installation)
+- [Clerk](https://clerk.com/docs/nextjs/getting-started/quickstart)
+- [assistant-ui](https://www.assistant-ui.com/docs/installation)

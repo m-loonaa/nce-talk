@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "pnpm --filter @nce-talk/web dev && pnpm --filter @nce-talk/api dev",
     "prepare": "husky"
   },
   "keywords": [],

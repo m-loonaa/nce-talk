@@ -1,4 +1,4 @@
-import { PORT } from '#utils/config.ts'
+import { PORT } from '#lib/config.ts'
 import app from './app.ts'
 
 app.listen(PORT, () => {
