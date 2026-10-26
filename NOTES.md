@@ -20,6 +20,8 @@
 
 - [Clerk](https://clerk.com/docs/expressjs/getting-started/quickstart)
 
+- [Sequelize - Migrations](https://sequelize.org/docs/v6/other-topics/migrations/)
+
 # apps/web
 
 - [Next.js](https://nextjs.org/docs/app/getting-started/installation)
