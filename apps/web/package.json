@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@assistant-ui/react": "^0.15.21",
-    "@assistant-ui/react-markdown": "^0.14.16",
+    "@assistant-ui/ai-sdk": "^0.0.16",
+    "@assistant-ui/react": "^0.15.32",
+    "@assistant-ui/react-markdown": "^0.14.24",
     "@base-ui/react": "^1.8.0",
     "@clerk/nextjs": "^7.9.4",
+    "assistant-stream": "^0.3.55",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.3.2",
     "lucide-react": "^1.47.0",

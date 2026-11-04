@@ -1,31 +1,26 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { useChatRuntime, AssistantChatTransport } from '@assistant-ui/ai-sdk'
 import {
   AssistantRuntimeProvider,
-  useLocalRuntime,
-  type ChatModelAdapter,
+  useRemoteThreadListRuntime,
 } from '@assistant-ui/react'
 
-const ModelAdapter: ChatModelAdapter = {
-  async run({ messages, abortSignal }) {
-    const result = await fetch('<YOUR_API_ENDPOINT>', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages }),
-      signal: abortSignal,
-    })
-    const data = await result.json()
-    return {
-      content: [{ type: 'text', text: data.text }],
-    }
-  },
-}
+import { threadListAdapter } from '@/lib/thread-adapter'
 
 export function RuntimeProvider({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const runtime = useLocalRuntime(ModelAdapter)
+  const runtime = useRemoteThreadListRuntime({
+    runtimeHook: () =>
+      useChatRuntime({
+        transport: new AssistantChatTransport({
+          api: '/api/chat',
+        }),
+      }),
+    adapter: threadListAdapter,
+  })
   return (
     <AssistantRuntimeProvider runtime={runtime}>
       {children}

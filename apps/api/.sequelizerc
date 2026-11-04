@@ -1,7 +1,8 @@
 const path = require('path')
+process.loadEnvFile('.env')
 
 module.exports = {
-  config: path.resolve('db/config/config.cjs'),
+  url: process.env.DATABASE_URL,
   'migrations-path': path.resolve('db/migrations'),
   'seeders-path': path.resolve('db/seeders'),
 }

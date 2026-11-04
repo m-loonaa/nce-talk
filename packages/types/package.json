@@ -1,0 +1,14 @@
+{
+  "name": "@nce-talk/types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.34.5"
+}

@@ -3,7 +3,6 @@ import { ClerkProvider, Show, UserButton } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { auth } from '@clerk/nextjs/server'
-import { RuntimeProvider } from '@/providers/RuntimeProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,22 +22,20 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: LayoutProps<'/'>) {
   await auth.protect()
   return (
-    <RuntimeProvider>
-      <html
-        lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
-        <body className="min-h-full flex flex-col" suppressHydrationWarning>
-          <ClerkProvider>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <Show when="signed-in">
-                <UserButton />
-              </Show>
-            </header>
-            {children}
-          </ClerkProvider>
-        </body>
-      </html>
-    </RuntimeProvider>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <ClerkProvider>
+          <header className="flex justify-end items-center p-4 gap-4 h-16">
+            <Show when="signed-in">
+              <UserButton />
+            </Show>
+          </header>
+          {children}
+        </ClerkProvider>
+      </body>
+    </html>
   )
 }
